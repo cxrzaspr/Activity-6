@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity6_Ara-is - Ara-is Creatives</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #cbd8cf;
+            color: #222222;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 15px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .brand-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid #8400ff;
+            object-fit: cover;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #e0be6c;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        .card h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #222222;
+            margin-bottom: 18px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active-page {
+            display: block;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #333333;
+            object-fit: cover;
+            margin: 0 auto 25px auto;
+            display: block;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .image-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .circular-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid #d1b15a; 
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .description p {
+            font-size: 0.95rem;
+            color: #444444;
+            margin-bottom: 16px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #333333;
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: #e1d4b4;
+            color: #503e3e;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 18px 20px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-title">
+            <img src="logo.jpg" alt="Ara-is logo" class="brand-logo">
+            <span>ARA-IS CREATIVES</span>
+        </div>
+        
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#home" onclick="navigateTo('home')">HOME</a></li>
+                <li><a href="#about" onclick="navigateTo('about')">ABOUT</a></li>
+                <li><a href="#gallery" onclick="navigateTo('gallery')">GALLERY</a></li>
+                <li><a href="#contact" onclick="navigateTo('contact')">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article class="card">
+            
+            <section id="home" class="page-section">
+                <h1>Welcome!</h1>
+                <p style="margin-bottom: 20px; color: #555555;">Discover user-centered design, semantic web layouts, and creative digital media collections.</p>
+            
+            <div class="image-group">
+                <img src="profile1.jpg" alt="Profile Image 1" class="circular-img">
+                <img src="profile2.jpg" alt="Profile Image 2" class="circular-img">
+                <img src="profile3.jpg" alt="Profile Image 3" class="circular-img">
+            </div>
+
+                <div class="cta-container">
+                    <a href="#about" onclick="navigateTo('about')" class="btn">Explore About Me</a>
+                </div>
+            </section>
+
+            <section id="about" class="page-section">
+                <h1>About the Collection</h1>
+                <img src="profile.png" alt="Profile Image" class="profile-img">
+                <div class="description">
+                    <p>Welcome to Ara-is Creatives, a dedicated showcase of digital art, web interfaces, and design concepts. Our brand if focused in the principle of blending human-computer interaction with visual storytelling.</p>
+                    <p>This collection is crafted to prioritize clarity, intuitive navigation, and visual balance across diverse user platforms.</p>
+                    <p>Through continuous passion for functional design, Ara-is Creatives strives to deliver digital solutions that inspire and empower users.</p>
+                </div>
+            </section>
+
+            <section id="gallery" class="page-section">
+                <h1>Featured Works</h1>
+                <p style="color: #555555;">Explore a selection of perfectly formatted circular project showcases.</p>
+                <div class="image-group">
+                    <img src="profile1.jpg" alt="Gallery Image 1" class="circular-img">
+                    <img src="profile2.jpg" alt="Gallery Image 2" class="circular-img">
+                    <img src="profile3.jpg" alt="Gallery Image 3" class="circular-img">
+                </div>
+                <div class="cta-container">
+                    <a href="#home" onclick="navigateTo('home')" class="btn">Return Home</a>
+                </div>
+            </section>
+
+            <section id="contact" class="page-section">
+                <h1>Contact Us</h1>
+                <p style="color: #555555;">Have a question or collaboration request? Send a message below.</p>
+                <p>Email: <strong>cxriz.prsnl@gmail.com</strong></p>
+                <p>Location: Baguio City, Philippines</p>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p> Ara-is Creatives 2026</p>
+    </footer>
+
+    <script>
+        function navigateTo(pageId) {
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => page.classList.remove('active-page'));
+
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active-page');
+            }
+
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === '#' + pageId) {
+                    link.classList.add('active');
+                } 
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const currentHash = window.location.hash.replace('#', '') || 'about';
+            navigateTo(currentHash);
+        });
+    </script>
+
+</body>
+</html>
